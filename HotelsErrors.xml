@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- intentionally broken on purpose for validation test -->
+<Hotel> <!-- (1) wrong root: should be <Hotels> -->
+  <Hotel id="H001" Rating="4.2">
+    <Name>Westin</Name>
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
+    <Address>
+      <Number>11</Number>
+      <Street>E 7th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel Rating="4.1"> <!-- (2) missing required id -->
+    <Name>Graduate Tempe</Name>
+    <Phone>480-967-9431</Phone>
+    <Address>
+      <Number>225</Number>
+      <Street>E Apache Blvd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H003"> <!-- (3) no Phone element -->
+    <Name>Canopy by Hilton Tempe Downtown</Name>
+    <Address>
+      <Number>108</Number>
+      <Street>E University Dr</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H004" Rating="4.0">
+    <Name>Moxy Phoenix Tempe ASU Area</Name>
+    <Phone>480-968-3451</Phone>
+    <!-- (4) Address not closed -->
+    <Address>
+      <Number>1333</Number>
+      <Street>S Rural Rd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+  </Hotel>
+
+  <Hotel id="H005">
+    <!-- (5) two Name elements -->
+    <Name>Courtyard by Marriott Tempe Downtown</Name>
+    <Name>Duplicate Name</Name>
+    <Phone>480-966-2800</Phone>
+    <Address>
+      <Number>601</Number>
+      <Street>S Ash Ave</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+</Hotel>
