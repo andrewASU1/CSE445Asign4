@@ -127,12 +127,28 @@ namespace ConsoleApp1
                     if (addrNode != null)
                     {
                         JObject addr = new JObject();
-                        string[] fields = { "Number", "Street", "City", "State", "Zip", "NearestAirport" };
+
+                        // element children
+                        string[] fields = { "Number", "Street", "City", "State", "Zip" };
                         foreach (string f in fields)
                         {
                             XmlNode n = addrNode.SelectSingleNode(f);
                             if (n != null) addr[f] = (n.InnerText ?? "").Trim();
                         }
+
+                        // NearestAirport: prefer element if present, else attribute (final schema uses attribute)
+                        XmlNode naElem = addrNode.SelectSingleNode("NearestAirport");
+                        if (naElem != null)
+                        {
+                            addr["NearestAirport"] = (naElem.InnerText ?? "").Trim();
+                        }
+                        else
+                        {
+                            var naAttr = addrNode.Attributes?["NearestAirport"];
+                            if (naAttr != null && !string.IsNullOrWhiteSpace(naAttr.Value))
+                                addr["NearestAirport"] = naAttr.Value.Trim();
+                        }
+
                         item["Address"] = addr;
                     }
 
