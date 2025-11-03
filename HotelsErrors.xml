@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- intentionally broken on purpose for validation test -->
-<Hotel> <!-- (1) wrong root: should be <Hotels> -->
+<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://YOURUSER.github.io/YOURREPO/Hotels.xsd">
+
   <Hotel id="H001" Rating="4.2">
     <Name>Westin</Name>
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
     <Address>
       <Number>11</Number>
-      <Street>E 7th St</Street>
+      <Street>E.7th St</Street>
       <City>Tempe</City>
       <State>AZ</State>
       <Zip>85281</Zip>
-      <NearestAirport>Sky Harbor</NearestAirport>
+      <NearestAirport>Sky Habor</NearestAirport>
     </Address>
   </Hotel>
 
-  <Hotel Rating="4.1"> <!-- (2) missing required id -->
+  <Hotel id="H002" Rating="4.1">
     <Name>Graduate Tempe</Name>
     <Phone>480-967-9431</Phone>
     <Address>
@@ -28,8 +29,9 @@
     </Address>
   </Hotel>
 
-  <Hotel id="H003"> <!-- (3) no Phone element -->
+  <Hotel id="H003">
     <Name>Canopy by Hilton Tempe Downtown</Name>
+    <Phone>480-672-0600</Phone>
     <Address>
       <Number>108</Number>
       <Street>E University Dr</Street>
@@ -43,7 +45,6 @@
   <Hotel id="H004" Rating="4.0">
     <Name>Moxy Phoenix Tempe ASU Area</Name>
     <Phone>480-968-3451</Phone>
-    <!-- (4) Address not closed -->
     <Address>
       <Number>1333</Number>
       <Street>S Rural Rd</Street>
@@ -51,12 +52,11 @@
       <State>AZ</State>
       <Zip>85281</Zip>
       <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
   </Hotel>
 
   <Hotel id="H005">
-    <!-- (5) two Name elements -->
     <Name>Courtyard by Marriott Tempe Downtown</Name>
-    <Name>Duplicate Name</Name>
     <Phone>480-966-2800</Phone>
     <Address>
       <Number>601</Number>
@@ -67,4 +67,84 @@
       <NearestAirport>Sky Harbor</NearestAirport>
     </Address>
   </Hotel>
-</Hotel>
+
+  <Hotel id="H006" Rating="4.3">
+    <Name>AC Hotel by Marriott Phoenix Tempe/Downtown</Name>
+    <Phone>480-642-6140</Phone>
+    <Address>
+      <Number>100</Number>
+      <Street>E Rio Salado Pkwy</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H007">
+    <Name>Hyatt Place Tempe / Phoenix Airport</Name>
+    <Phone>602-344-6160</Phone>
+    <Address>
+      <Number>1413</Number>
+      <Street>W Rio Salado Pkwy</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H008" Rating="3.9">
+    <Name>Hilton Garden Inn Tempe ASU Research Park</Name>
+    <Phone>480-804-7777</Phone>
+    <Address>
+      <Number>7290</Number>
+      <Street>S Price Rd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85283</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H009">
+    <Name>Residence Inn Tempe Downtown/University</Name>
+    <Phone>480-967-2300</Phone>
+    <Address>
+      <Number>510</Number>
+      <Street>S Forest Ave</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H010" Rating="4.1">
+    <Name>Holiday Inn Express &amp; Suites Tempe</Name>
+    <Phone>480-736-1700</Phone>
+    <Address>
+      <Number>1520</Number>
+      <Street>W Baseline Rd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85283</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+  <Hotel id="H011">
+    <Name>Tempe Mission Palms</Name>
+    <Phone>480-894-1400</Phone>
+    <Phone>800-547-8705</Phone>
+    <Address>
+      <Number>60</Number>
+      <Street>E 5th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+      <NearestAirport>Sky Harbor</NearestAirport>
+    </Address>
+  </Hotel>
+
+</Hotels>
