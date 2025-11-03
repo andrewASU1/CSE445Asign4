@@ -6,25 +6,26 @@
   <xs:element name="Hotels">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Hotel" maxOccurs="unbounded">
+        <xs:element name="Hotel" minOccurs="1" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Name" type="xs:string"/>
+              <xs:element name="Name" type="xs:string" minOccurs="1" />
               <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
               <xs:element name="Address">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="Number" type="xs:string"/>
-                    <xs:element name="Street" type="xs:string"/>
-                    <xs:element name="City" type="xs:string"/>
-                    <xs:element name="State" type="xs:string"/>
-                    <xs:element name="Zip" type="xs:string"/>
-                    <xs:element name="NearestAirport" type="xs:string"/>
+                    <xs:element name="Number" type="xs:int"   minOccurs="1"/>
+                    <xs:element name="Street" type="xs:string" minOccurs="1"/>
+                    <xs:element name="City"   type="xs:string" minOccurs="1"/>
+                    <xs:element name="State"  type="xs:string" minOccurs="1"/>
+                    <xs:element name="Zip"    type="xs:int"    minOccurs="1"/>
+                    <xs:element name="NearestAirport" type="xs:string" minOccurs="1"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:string" use="required"/>
+            <!-- Courses.xsd style: ID-typed primary key, optional decimal rating -->
+            <xs:attribute name="id" type="xs:ID" use="required"/>
             <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
           </xs:complexType>
         </xs:element>
